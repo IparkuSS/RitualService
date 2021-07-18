@@ -1,0 +1,98 @@
+﻿<Window x:Class="FuneralServices.MenWith"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FuneralServices"
+        mc:Ignorable="d"
+        
+         
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Венки" Height="583" Width="907.5" Loaded="Window_Loaded" Background="Transparent" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" >
+    <Grid Margin="0,0,-102,-21" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="498"/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" Margin="0,0,102,-55">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF8B117A" Offset="0.1"/>
+                    <GradientStop Color="#FF394F9B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <TextBlock FontSize="30" FontWeight="bold"  Foreground="#F6E68C" HorizontalAlignment="Center" Margin="154,0,104,455" Width="436"><Run Text="  Информация о Венках"/><Run/></TextBlock>
+        <Image Source="imag/coffinBla.png" Margin="796,0,116,311" RenderTransformOrigin="0.664,0.083"/>
+        <DataGrid AutoGenerateColumns="False" x:Name="Grid" FontSize="10" Margin="0,48,335,-55"  FontWeight="Bold" CanUserAddRows ="False">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4F2895" Offset="0.704"/>
+                    <GradientStop Color="#FFA92DC5" Offset="0.17"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns >
+                <DataGridTextColumn Binding="{Binding Path = classWre}"  FontSize="10" IsReadOnly="True" Header="Название венка" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Path = typeWrea}" FontSize="10" IsReadOnly="True" Header="Тип венка" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Path = typeV}" FontSize="10" IsReadOnly="True" Header="Класс венка" Width="150"/>
+              
+                <DataGridTextColumn Binding="{Binding Path = solid}" FontSize="10" IsReadOnly="True" Header="Цена" Width="120"/>
+                <DataGridTemplateColumn Header="Венки" Width="*" x:Name="IMM" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image  x:Name="IВMM"  Source="{Binding Path = imageCh}" Loaded="ImageDataGrid" Width="100"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListView FontSize="15" Margin="669,176,36,-54">
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Text" Margin="15"/>
+                    <TextBox VerticalAlignment="Center" x:Name="Search" Width="140" Height="34"/>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="SearchAdd" Margin="15"/>
+                    <Button Content="Поиск" Click="Faind_Click"  Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Add" Margin="15"/>
+                    <Button Content="Добавление" Click="Add_Click"  Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Edit" Margin="15"/>
+                    <Button Content="Редактирование"  Click="Edit_Click"  Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Delete" Margin="15"/>
+                    <Button Content="Удаление" Click="Delete_Click" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="ArrowBack" Margin="15"/>
+                    <Button Content="Назад" Click="button" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Add" Margin="15"/>
+                    <Button Content="добавить изоброжение" Name="btnOpenFile" Click="btnOpenFile_Click" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+
+        </ListView>
+
+
+    </Grid>
+</Window>

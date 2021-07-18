@@ -1,0 +1,84 @@
+﻿<Window x:Class="FuneralServices.MenWork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FuneralServices"
+        mc:Ignorable="d"
+     
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Рабочие" Height="665" Width="759" Loaded="Window_Loaded" Background="Transparent" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" >
+    <Grid Margin="0,0,-102,-21" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="498"/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" Margin="0,0,100,-137">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF8B117A" Offset="0.1"/>
+                    <GradientStop Color="#FF394F9B" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <TextBlock FontSize="30" FontWeight="bold"  Foreground="#F6E68C" HorizontalAlignment="Center" Margin="112,0,128,455" Width="454"><Run Text="  Информация о рабочих"/><Run/></TextBlock>
+        <Image Source="imag/coffinBla.png" Margin="588,43,128,293" RenderTransformOrigin="0.664,0.083"/>
+        <DataGrid AutoGenerateColumns="False" x:Name="Grid" FontSize="10" Margin="0,43,297,-137" FontWeight="Bold" CanUserAddRows ="False">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4F2895" Offset="0.704"/>
+                    <GradientStop Color="#FFA92DC5" Offset="0.17"/>
+
+                </LinearGradientBrush>
+            </DataGrid.Background>
+            <DataGrid.Columns >
+                <DataGridTextColumn Binding="{Binding Path = nameWorker}"  FontSize="10" IsReadOnly="True" Header="Имя" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Path = surNameWorker}" FontSize="10" IsReadOnly="True" Header="Фамилия" Width="120"/>
+                <DataGridTextColumn Binding="{Binding Path = partWorker}" FontSize="10" IsReadOnly="True" Header="отчество" Width="140"/>
+                <DataGridTextColumn Binding="{Binding Path = numberTelWorker}" FontSize="10" IsReadOnly="True" Header="Номер телефона" Width="*"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <ListView FontSize="15" Margin="551,312,36,-126">
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Text" Margin="15"/>
+                    <TextBox VerticalAlignment="Center" x:Name="Search" Width="140" Height="34"/>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="SearchAdd" Margin="15"/>
+                    <Button Content="Поиск" Click="Faind_Click"  Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Add" Margin="15"/>
+                    <Button Content="Добовление" Click="Add_Click"  Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Edit" Margin="15"/>
+                    <Button Content="Редактирование"  Click="Edit_Click"  Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Delete" Margin="15"/>
+                    <Button Content="Удаление" Click="Delete_Click" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem Padding="1">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="ArrowBack" Margin="15"/>
+                    <Button Content="Назад" Click="button" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </ListViewItem>
+        </ListView>
+
+
+    </Grid>
+</Window>

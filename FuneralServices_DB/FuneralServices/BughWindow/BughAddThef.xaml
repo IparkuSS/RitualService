@@ -1,0 +1,44 @@
+﻿<Window x:Class="FuneralServices.BughAddThef"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FuneralServices"
+        mc:Ignorable="d"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Добовление поминок" Height="460.588" Width="533.146" Background="black" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" >
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="8" />
+        </Style>
+    </Window.Resources>
+    <Grid Background="black" Margin="14,0,13,65" Width="500">
+        <Border MinWidth="200" Margin="10,55,20,0" VerticalAlignment="Top" Padding="30" MaxHeight="800" CornerRadius="20" Height="259">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF38B438" Offset="0"/>
+                    <GradientStop Color="#FFC72F2F" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="Yellow" ShadowDepth="10" />
+            </Border.Effect>
+            <StackPanel Margin="0,0,0,-30">
+                <TextBlock Text="Цена поминок" FontSize="30" FontWeight="bold" Margin="0 0 0 20 "/>
+
+                <TextBox Text="{Binding solidFunr}"  x:Name="solidCofIn" MaxLength="6" materialDesign:HintAssist.Hint="Введите цену за  поминки(БелРуб)" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+
+                <Grid Margin="0 0 0 20" Height="108">
+
+                    <Button Content="ОК" IsDefault="True" Click="Accept_Click" Margin="0,27,282,0" Style="{StaticResource MaterialDesignFlatMidBgButton}" Height="30" VerticalAlignment="Top"  />
+                    <Button Content="Отмена"  IsCancel="True" Margin="250,27,0,51" Style="{StaticResource MaterialDesignFlatMidBgButton}" Height="Auto"  />
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

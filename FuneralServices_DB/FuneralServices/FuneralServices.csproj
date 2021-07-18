@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{696B9330-0FD9-4FEB-8BAB-819E80DD0A85}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FuneralServices</RootNamespace>
+    <AssemblyName>FuneralServices</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentWPF, Version=0.8.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentWPF.0.8.0\lib\net45\FluentWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.IconPacks.Material, Version=2.3.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.Material.2.3.0\lib\net46\MahApps.Metro.IconPacks.Material.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.7.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.7\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=3.2.0.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.3.2.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AdminWindow\AddWork.xaml.cs">
+      <DependentUpon>AddWork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWindow\AdmMainForm.xaml.cs">
+      <DependentUpon>AdmMainForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWindow\ADMUsersFrom.xaml.cs">
+      <DependentUpon>ADMUsersFrom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BD\AppCont.cs" />
+    <Compile Include="BughWindow\BughAddHear.xaml.cs">
+      <DependentUpon>BughAddHear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BughWindow\BughAddThef.xaml.cs">
+      <DependentUpon>BughAddThef.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BughWindow\BughAddWh.xaml.cs">
+      <DependentUpon>BughAddWh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BughWindow\bughalterMainForm.xaml.cs">
+      <DependentUpon>bughalterMainForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BughWindow\BughCrossAdd.xaml.cs">
+      <DependentUpon>BughCrossAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BughWindow\BughMonumAdd.xaml.cs">
+      <DependentUpon>BughMonumAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BughWindow\BughPriceCrof.xaml.cs">
+      <DependentUpon>BughPriceCrof.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BughWindow\BughRItgod.xaml.cs">
+      <DependentUpon>BughRItgod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BughWindow\BughRitServ.xaml.cs">
+      <DependentUpon>BughRitServ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Coffin.cs" />
+    <Compile Include="Data\Crosse.cs" />
+    <Compile Include="Data\Customer.cs" />
+    <Compile Include="Data\FuneralC.cs" />
+    <Compile Include="ManagerWindow\MenCof.xaml.cs">
+      <DependentUpon>MenCof.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenCofAdd.xaml.cs">
+      <DependentUpon>MenCofAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenCros.xaml.cs">
+      <DependentUpon>MenCros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenCrosAdd.xaml.cs">
+      <DependentUpon>MenCrosAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenegerFuntServixAdd.xaml.cs">
+      <DependentUpon>MenegerFuntServixAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenMonumAdd.xaml.cs">
+      <DependentUpon>MenMonumAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenMonumentForm.xaml.cs">
+      <DependentUpon>MenMonumentForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenWith.xaml.cs">
+      <DependentUpon>MenWith.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenWithAdd.xaml.cs">
+      <DependentUpon>MenWithAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenWork.xaml.cs">
+      <DependentUpon>MenWork.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenWorkAdd.xaml.cs">
+      <DependentUpon>MenWorkAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWindow\MFunrealFormAdd.xaml.cs">
+      <DependentUpon>MFunrealFormAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FunrService.cs" />
+    <Compile Include="Data\Hearse.cs" />
+    <Compile Include="ManagerWindow\ManegerRitGods.xaml.cs">
+      <DependentUpon>ManegerRitGods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenegerCustomer.xaml.cs">
+      <DependentUpon>MenegerCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenegerCustomerAdd.xaml.cs">
+      <DependentUpon>MenegerCustomerAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenegerFunrPForm.xaml.cs">
+      <DependentUpon>MenegerFunrPForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenegerFunrServic.xaml.cs">
+      <DependentUpon>MenegerFunrServic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenegerOrderAdd.xaml.cs">
+      <DependentUpon>MenegerOrderAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenegerRitGodsAdd.xaml.cs">
+      <DependentUpon>MenegerRitGodsAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenegMainForm.xaml.cs">
+      <DependentUpon>MenegMainForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerWindow\MenegOrder.xaml.cs">
+      <DependentUpon>MenegOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWindow\MHers.xaml.cs">
+      <DependentUpon>MHers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWindow\MhersAdd.xaml.cs">
+      <DependentUpon>MhersAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Monument.cs" />
+    <Compile Include="AllAccess\MtheFun.xaml.cs">
+      <DependentUpon>MtheFun.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllAccess\MtheFunAdd.xaml.cs">
+      <DependentUpon>MtheFunAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllAccess\mWhAdd.xaml.cs">
+      <DependentUpon>mWhAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Order.cs" />
+    <Compile Include="AllAccess\RegForm.xaml.cs">
+      <DependentUpon>RegForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RitualGod.cs" />
+    <Compile Include="AllAccess\SellMainForm.xaml.cs">
+      <DependentUpon>SellMainForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TheFuneral.cs" />
+    <Compile Include="Data\user.cs" />
+    <Compile Include="Data\Worker.cs" />
+    <Compile Include="Data\Wreath.cs" />
+    <Page Include="AdminWindow\AddWork.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWindow\AdmMainForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWindow\ADMUsersFrom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BughWindow\BughAddHear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BughWindow\BughAddThef.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BughWindow\BughAddWh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BughWindow\bughalterMainForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BughWindow\BughCrossAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BughWindow\BughMonumAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BughWindow\BughPriceCrof.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BughWindow\BughRItgod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BughWindow\BughRitServ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenCof.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenCofAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenCros.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenCrosAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenegerFuntServixAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenMonumAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenMonumentForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenWith.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenWithAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenWork.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenWorkAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWindow\MFunrealFormAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWindow\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AdminWindow\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ManagerWindow\ManegerRitGods.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenegerCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenegerCustomerAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenegerFunrPForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenegerFunrServic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenegerOrderAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenegerRitGodsAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenegMainForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManagerWindow\MenegOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWindow\MHers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWindow\MhersAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllAccess\MtheFun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllAccess\MtheFunAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllAccess\mWhAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllAccess\RegForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllAccess\SellMainForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RitualNewBd.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imag\coffinBla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imag\MenMain.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>

@@ -1,0 +1,80 @@
+﻿<Window x:Class="FuneralServices.MenegMainForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FuneralServices"
+       mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF" 
+        fw:AcrylicWindow.Enabled="True" 
+          xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+       
+     Title= "Менеджер" WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Height="438.417" Width="323" Background="Transparent"  AllowsTransparency="True"  >
+
+    <Grid HorizontalAlignment="Left" Width="323"  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="323"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid fw:PointerTracker.Enabled="True" Background="#01FFFFFF">
+            <Border CornerRadius="10" Margin="0,0,0,-145">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#F6770E" Offset="0.0"/>
+                        <GradientStop Color="#951466" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <StackPanel Margin="0,0,-10,0">
+                <StackPanel Orientation="Horizontal">
+                    <Button Foreground="Black"  Click="MenMaFoOut" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <materialDesign:PackIcon Kind="ArrowLeft"/>
+                    </Button>
+                    <TextBlock Text="Выход" FontSize="12" Margin="10" VerticalAlignment="Center"/>
+                </StackPanel>
+                <ListViewItem Padding="0">
+                    <Label Name="lblTime" FontSize="48" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="32" />
+                </ListViewItem>
+                <TextBlock Text="Кабинет менеджера" Margin="15" FontWeight="DemiBold" Height="17"/>
+                <ListView FontSize="15">
+                    <ListViewItem Padding="1">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="MessageOutline" Margin="15"/>
+                            <Button Content="Заказ"  Click="MenMaFoOrd" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Padding="1" Height="59">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Contact" Margin="15"/>
+                            <Button Content="Заказчик"  Click="MenMaFoCust" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Padding="1" Height="59">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Contact" Margin="15"/>
+                            <Button Content="CellForm"  Click="CellForm" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Padding="1" Height="59">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Contact" Margin="15"/>
+                            <Button Content="AdmForm"  Click="AdmForm" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Padding="1" Height="59">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Contact" Margin="15"/>
+                            <Button Content="bughForm"  Click="bughForm" Style="{StaticResource MaterialDesignToolForegroundButton}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    
+                </ListView>
+                <Image Source="imag/MenMain.png"  Margin="0,0,10,0" RenderTransformOrigin="0.5,0.5" Opacity="0.4" Height="395"/>
+            </StackPanel>
+          
+        </Grid>
+
+    </Grid>
+</Window>
